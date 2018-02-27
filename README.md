@@ -1,10 +1,10 @@
 # apiloader
 api-loader webpack
 
-```
-js|vue ==> api-loader ==> json
+## js|vue ==> api-loader ==> json
 
-```
+> webpeck loader 
+> 将 js|vue file 内的注释提取出 转化为json
 
 # Explanatory 
 
@@ -46,5 +46,41 @@ js|vue ==> api-loader ==> json
 * @params {string} [b = B] - test params b
 * @return {Number} [default = 111111] - test function return
 
+```
+/**
+ * @function test - this is test function
+ * @params {string} [a = A] - test params a
+ * @params {string} [b = B] - test params b
+ * @return {Number} [default = 111111] - test function return
+ */
+
+ {
+  "function": [{
+    "name": "test",
+    "descript": "this is test function",
+    "params": [{
+      "type": "string",
+      "defVal": {
+        "a": "A"
+      },
+      "descript": "test params a"
+    }, {
+      "type": "string",
+      "defVal": {
+        "b": "B"
+      },
+      "descript": "test params b"
+    }],
+    "return": {
+      "type": "Number",
+      "defVal": {
+        "default": "111111"
+      },
+      "descript": "test function return"
+    }
+  }]
+ }
+
+```
 
 
