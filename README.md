@@ -86,7 +86,7 @@ api-loader webpack
 ```
 # Configuration
 
->> Webpack loader rules
+> Webpack loader rules
 
 ```
 const apiConfig = require('./api-loader.conf.js')
@@ -126,10 +126,10 @@ module.exports = {
 }
 ```
 
-> str             注释的string
+* str             注释的string
 
-> current.node    当前节点    将str转化的object 挂载到 current.node上 
+* current.node    当前节点    将str转化的object 挂载到 current.node上 
 
-> root            根节点      为整个文档的根节点
+* root            根节点      为整个文档的根节点
 
 * splitString 对str 进行解析 转化为 Object 可不使用 
