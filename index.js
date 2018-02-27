@@ -137,6 +137,12 @@ var block = {...blockRules(splitString)}
 module.exports = function(source) {
   const options = loaderUtils.getOptions(this);
   let position = this.resourcePath.lastIndexOf('/')
+  if (options.inline) {
+    inline = Object.assign(inline, options.inline(splitString))
+  }
+  if (options.block) {
+    block = Object.assign(block, options.block(splitString))
+  }
   var filename
   if (position < 0) {
     filename = this.resourcePath.substr(this.resourcePath.lastIndexOf('\\') + 1).split('.')[0]
@@ -161,6 +167,7 @@ module.exports = function(source) {
     if (e.length > 3)
       b.push('__' + e)
   })
+
   if (str.length > 0) {
     var root = createTree(b, rootNode)
     const filepath = `${rpath}/${filename}${extension}`

@@ -19,6 +19,8 @@ api-loader webpack
 
 # Keyword
 
+* @break 返回到根节点 当两个块节点相邻时 @break 跳出上节点namespaces 回到根节点
+
 * @watch prA - 描述applicant
 
 * @attr [deep = true] - watch deep
@@ -82,5 +84,52 @@ api-loader webpack
  }
 
 ```
+# Configuration
 
+>> Webpack loader rules
 
+```
+const apiConfig = require('./api-loader.conf.js')
+
+{
+  test: /\.(js|vue)$/,
+  loader: 'apiloader', 
+  options: apiConfig,
+  include: [resolve('src')]
+}
+```
+
+> api-loader.conf.js 配置文件 在loader内传入
+
+```
+module.exports = {
+  > // 行元素
+  inline: (splitString) => {     
+    return {
+      '__note': (str, current, root) => {
+        root.code = splitString(str)
+        current.node = root
+      }
+    }
+  },
+  > // 块元素
+  block: (splitString) => {
+    return {
+      '__code': (str, current, root) => {
+        current.node.note = current.node.note ? current.node.note : []
+        var a = splitString(str)
+        current.node.note.push(a)
+        current.node = a
+      }
+    }
+  }
+}
+```
+
+> str             注释的string
+
+> current.node    当前节点    将str转化的object 挂载到 current.node上 
+
+> root            根节点      为整个文档的根节点
+
+* splitString 对str 进行解析 转化为 Object 可不使用 
