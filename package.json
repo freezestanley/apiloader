@@ -1,6 +1,6 @@
 {
   "name": "apiloader",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "api-loader  explanatory note ==> json",
   "main": "index.js",
   "scripts": {
