@@ -1,51 +1,22 @@
 {
-  "_from": "apiloader",
-  "_id": "apiloader@1.0.19",
-  "_inBundle": false,
-  "_integrity": "sha512-UDHbWv/nY4Zp3e0uCPYvNbEhY1th9FMIyENgIEpryxsnEb/y6P4jIzDHSmBE5ViiuH6N09LuXi1DV1q31dWUTQ==",
-  "_location": "/apiloader",
-  "_phantomChildren": {},
-  "_requested": {
-    "type": "tag",
-    "registry": true,
-    "raw": "apiloader",
-    "name": "apiloader",
-    "escapedName": "apiloader",
-    "rawSpec": "",
-    "saveSpec": null,
-    "fetchSpec": "latest"
-  },
-  "_requiredBy": [
-    "#DEV:/",
-    "#USER"
-  ],
-  "_resolved": "https://registry.npmjs.org/apiloader/-/apiloader-1.0.18.tgz",
-  "_shasum": "0f94f16ad5ba03a10a69072d65dc0b2b2ec96800",
-  "_spec": "apiloader",
-  "_where": "/Users/stanleyxu/Desktop/vsiren/aaa",
-  "author": {
-    "name": "stanley",
-    "email": "414716114@qq.com"
-  },
-  "bugs": {
-    "url": "https://github.com/freezestanley/apiloader/issues"
-  },
-  "bundleDependencies": false,
-  "deprecated": false,
-  "description": "api-loader  explanatory note ==> json",
-  "homepage": "https://github.com/freezestanley/apiloader#readme",
-  "keywords": [
-    "apiloader"
-  ],
-  "license": "ISC",
-  "main": "index.js",
   "name": "apiloader",
+  "version": "1.0.19",
+  "description": "api-loader  explanatory note ==> json",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/freezestanley/apiloader.git"
   },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "keywords": [
+    "apiloader"
+  ],
+  "author": "stanley <414716114@qq.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/freezestanley/apiloader/issues"
   },
-  "version": "1.0.18"
+  "homepage": "https://github.com/freezestanley/apiloader#readme"
 }
