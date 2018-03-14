@@ -15,12 +15,16 @@ function test (a = 'A', b = 'B') {
   /**
    * @function test1 - descript
    * @return {Number} [default = 123123] - descript
+   * @endfunction
    */
   function test1 () {
     return 123123
   }
   return test1()
 }
+/**
+  * @endfunction
+  */
 test()
 
 /**
