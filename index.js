@@ -157,7 +157,7 @@ var block = {...blockRules(splitString)}
 var space = {...spaceRules(splitString)}
 
 function apiloader (source) {
-  const options = loaderUtils.getOptions(this)
+  const options = loaderUtils.getOptions ? loaderUtils.getOptions(this) : {}
   let position = this.resourcePath.lastIndexOf('/')
   if (options.inline) {
     inline = Object.assign(inline, options.inline(splitString))
