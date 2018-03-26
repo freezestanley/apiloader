@@ -159,13 +159,13 @@ var space = {...spaceRules(splitString)}
 function apiloader (source) {
   const options = loaderUtils.getOptions ? loaderUtils.getOptions(this) : {}
   let position = this.resourcePath.lastIndexOf('/')
-  if (options.inline) {
+  if (options && options.inline) {
     inline = Object.assign(inline, options.inline(splitString))
   }
-  if (options.block) {
+  if (options && options.block) {
     block = Object.assign(block, options.block(splitString))
   }
-  if (options.space) {
+  if (options && options.space) {
     space = Object.assign(block, options.space(splitString))
   }
   Object.keys(space).map((i) => {
@@ -211,7 +211,7 @@ function apiloader (source) {
   }
   return source
 }
-// let pathff = __dirname + '/demo/demo.vue'
-// var data = fs.readFileSync(pathff).toString();
-// apiloader(data)
+let pathff = __dirname + '/demo/demo.vue'
+var data = fs.readFileSync(pathff).toString();
+apiloader(data)
 module.exports = apiloader
